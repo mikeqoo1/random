@@ -20,15 +20,24 @@ var MyConfig myConfigStruct
 
 //InitMyConfig 我的設定檔
 func InitMyConfig() {
-	viper.SetConfigName("config")                         // 指定文件的名稱
-	viper.AddConfigPath("/Projects/BackendServer/config") // 配置文件和執行檔目錄
-	err := viper.ReadInConfig()                           // 根據以上定讀取文件
+	viper.SetConfigName("data")                    // 指定文件的名稱
+	viper.AddConfigPath("/Projects/random/config") // 配置文件和執行檔目錄
+	err := viper.ReadInConfig()                    // 根據以上定讀取文件
 	if err != nil {
 		fmt.Println("Fatal error config file" + err.Error())
 	}
-	MyConfig.Seat = viper.GetString("BASIC.timeZone")
-	MyConfig.Eat = viper.GetString("BASIC.serverPort")
-	MyConfig.Drink = viper.GetString("BASIC.interval")
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name1"))
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name2"))
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name3"))
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name4"))
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name5"))
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name6"))
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name7"))
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name8"))
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name9"))
+	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name10"))
+
+	
 
 }
 
