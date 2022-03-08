@@ -37,8 +37,27 @@ func InitMyConfig() {
 	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name9"))
 	MyConfig.Seat = append(MyConfig.Seat, viper.GetString("TABLE.name10"))
 
-	
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name1"))
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name2"))
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name3"))
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name4"))
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name5"))
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name6"))
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name7"))
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name8"))
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name9"))
+	MyConfig.Eat = append(MyConfig.Eat, viper.GetString("Eat.name10"))
 
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name1"))
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name2"))
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name3"))
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name4"))
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name5"))
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name6"))
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name7"))
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name8"))
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name9"))
+	MyConfig.Drink = append(MyConfig.Drink, viper.GetString("Drink.name10"))
 }
 
 //CreatRandomNumber 生成不重複亂數的array 參數說明 (起始數字 結束數字 array大小)
