@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	lib "random/lib"
 
@@ -15,6 +14,7 @@ const WindowName = "window"
 // ButtonName is the defined identifier for the list box in the glade template
 const ButtonName = "button"
 
+// TextViewName
 const TextViewName = "text"
 
 // UIMain is the path to our glade file
@@ -25,7 +25,6 @@ func init() {
 }
 
 func main() {
-
 	//解析command line 參數
 	gtk.Init(&os.Args)
 
@@ -41,7 +40,7 @@ func main() {
 		panic(err)
 	}
 
-	window.SetTitle("GO GTK3 Glade Example")
+	window.SetTitle("隨機吃飯喝飲料")
 	window.SetDefaultSize(300, 300)
 	window.Connect("destroy", func() {
 		gtk.MainQuit()
@@ -53,18 +52,20 @@ func main() {
 
 	textview, err := getTextView(bldr)
 	if err != nil {
+		fmt.Println("取得textview物件失敗")
 		panic(err)
 	}
 
 	buffer, err := textview.GetBuffer()
 	if err != nil {
-		log.Fatal("取得textview buffer 失敗")
+		fmt.Println("取得textview buffer 失敗")
 		panic(err)
 	}
 	buffer.SetText("請按按鈕")
 
 	button, err := getButton(bldr)
 	if err != nil {
+		fmt.Println("取得button物件失敗")
 		panic(err)
 	}
 
@@ -80,9 +81,6 @@ func main() {
 			buffer.SetText(text)
 		}
 	})
-	if err != nil {
-		panic(err)
-	}
 
 	window.ShowAll()
 
@@ -91,7 +89,6 @@ func main() {
 
 // getBuilder returns *gtk.getBuilder loaded with glade resource (if resource is given)
 func getBuilder(filename string) (*gtk.Builder, error) {
-	fmt.Println(filename)
 	b, err := gtk.BuilderNew()
 	if err != nil {
 		return nil, err
@@ -109,7 +106,6 @@ func getBuilder(filename string) (*gtk.Builder, error) {
 
 // getWindow returns *gtk.Window object from the glade resource
 func getWindow(b *gtk.Builder) (*gtk.Window, error) {
-
 	obj, err := b.GetObject(WindowName)
 	if err != nil {
 		return nil, err
@@ -125,7 +121,6 @@ func getWindow(b *gtk.Builder) (*gtk.Window, error) {
 
 // getButton returns *gtk.Button object from the glade resource
 func getButton(b *gtk.Builder) (*gtk.Button, error) {
-
 	obj, err := b.GetObject(ButtonName)
 	if err != nil {
 		return nil, err
